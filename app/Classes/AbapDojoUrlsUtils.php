@@ -4,9 +4,16 @@ namespace App\Classes;
 
 class AbapDojoUrlsUtils
 {
-    private $username = "admin";
-    private $password = "M3ll0nvalim@2021";
-    private $api_url = 'http://urls.abapdojo.dev.br/yourls-api.php';
+    private $username;
+    private $password;
+    private $api_url;
+
+    public function __construct()
+    {
+        $this->username = env('URLS_ABAP_DOJO_USER');
+        $this->password = env('URLS_ABAP_DOJO_PASS');
+        $this->api_url = env('URLS_ABAP_DOJO_URL');
+    }
 
     public function shortUrl($url)
     {

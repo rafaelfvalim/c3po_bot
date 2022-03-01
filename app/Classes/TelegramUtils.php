@@ -10,7 +10,7 @@ class TelegramUtils
     public function __construct($idGrupo)
     {
         $this->idGrupo = $idGrupo;
-        $this->apiToken = "2008051556:AAFz2wjLdYfI13WUuSRYiXd12zimF-ihLIE";
+        $this->apiToken = env('TELEGRAM_KEY');;
     }
 
     public function sendMessage($message)
